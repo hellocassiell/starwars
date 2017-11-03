@@ -18,9 +18,11 @@
     body {
         background: url(images/bg.jpg);
     }
+
     img {
         width: 100%;
     }
+    
     .starwars-demo {
         height: 17em;
         position: absolute;
@@ -89,13 +91,68 @@
         }
        
     }
-    
+
+    .byline {
+        color:#fff;
+        font-family: Lato;
+        font-size: 1.8em;
+        letter-spacing: 0.4em;
+        position: absolute;
+        left: 2.5%;
+        top:40%;
+        text-transform: uppercase;
+        animation:move-byline 10s linear infinite;
+    }
+
+    .byline span{
+        display: inline-block;
+        animation:spin-letters 10s linear infinite;
+        
+    }
+
+
+    @keyframes move-byline {
+        0%{
+            transform: translateZ(5em);
+        }
+
+        100% {
+            transform:translateZ(0);
+        }
+    }
+
+    @keyframes spin-letters{
+        0%,100% {
+            opacity:0;
+            transform:rotateY(90deg);
+        }
+
+        30% {
+            opacity:1;
+        }
+
+        70%,80% {
+            transform:rotateY(0);
+            opacity:1;
+        }
+
+        88%,100% {
+            opacity:0;
+        }
+
+    }
     </style>
 </head>
 <body>
     <div class="starwars-demo">
         <img src="./images/star.svg" alt="star" class="star">
         <img src="./images/wars.svg" alt="wars" class="wars">
+        <h2 class="byline">
+                <span>T</span><span>h</span><span>e</span>
+                <span>F</span><span>o</span><span>r</span><span>c</span><span>e</span>
+                <span>A</span><span>w</span><span>a</span><span>k</span><span>e</span><span>n</span><span>s</span>
+            </h2>
     </div>
+    
 </body>
 </html>
